@@ -1,0 +1,5 @@
+package healspan.login.repository;
+
+public interface UserRepository {
+
+}

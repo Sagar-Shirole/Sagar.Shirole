@@ -1,0 +1,3 @@
+cspring.datasource.url=jdbc:postgresql://healspan-dev.c3ozzbu0cfzn.ap-south-1.rds.amazonawscom:5432/user_master
+spring.datasource.username=root
+spring.datasource.password=Apaar123.

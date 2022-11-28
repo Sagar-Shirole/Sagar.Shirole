@@ -1,0 +1,35 @@
+package healspan.login.service;
+
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import healspan.login.controller.User_Master;
+import healspan.login.repository.UserRepository;
+
+@Service
+public class UserService {
+	@Autowired
+	UserRepository userRepository;
+
+	public Object findBy(Long um_id, String um_password) {
+		User_Master user_Master = userRepository.getById(um_id);
+		if (user_Master != null) {
+			if (um_id.equals(user_Master.getUm_id()) && um_password.equals(user_Master.getUm_password())) {
+				return userRepository.findById(um_id);
+			} else {
+				return Repository.findById(um_id).orElseThrow(
+			            ()
+		                -> new NoSuchElementException(
+		                    "NO CUSTOMER PRESENT WITH ID = " + um_id))));
+			}
+		} else {
+			return userRepository.findById(um_id).orElseThrow(
+		            ()
+	                -> new NullPointerException(
+	                    "NO CUSTOMER PRESENT WITH ID = " + um_id))));
+		}
+	}
+}

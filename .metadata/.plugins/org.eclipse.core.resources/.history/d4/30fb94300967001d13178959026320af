@@ -1,0 +1,8 @@
+package healspan.login.controller;
+
+import javax.persistence.Entity;
+
+@Entity
+public class User_Master {
+
+}

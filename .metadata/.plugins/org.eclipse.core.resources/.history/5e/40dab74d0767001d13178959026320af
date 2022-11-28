@@ -1,0 +1,6 @@
+package healspan.login.controller;
+
+@Entity
+public class User_Master {
+
+}

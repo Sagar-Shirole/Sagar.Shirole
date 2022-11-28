@@ -1,0 +1,32 @@
+package healspan.login.controller;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class User {
+    @Id
+    @SequenceGenerator(name = "users_sequence", sequenceName = "users_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_sequence")
+    private Long id;
+
+    @Column
+    private String firstName;
+
+    @Column
+    private String lastName;
+
+    @Column
+    private String email;
+
+    @Column
+    private String password;
+
+    @Column
+    private String phoneNumber;
+}

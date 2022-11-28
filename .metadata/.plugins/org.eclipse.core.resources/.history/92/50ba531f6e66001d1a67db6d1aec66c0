@@ -1,0 +1,20 @@
+package healspan.login.controller;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+	@Autowired
+	UserRepository userRep;
+	
+	public void getUser(Long id)
+	{
+		int i=  userRep.findById(id);
+		if()
+		
+	}
+
+}

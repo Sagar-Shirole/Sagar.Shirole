@@ -1,0 +1,19 @@
+package healspan.loginpage.controller;
+
+public class Account {
+	String uid;
+	String Pass;
+	public String getUid() {
+		return uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
+	public String getPass() {
+		return Pass;
+	}
+	public void setPass(String pass) {
+		Pass = pass;
+	}
+	
+}

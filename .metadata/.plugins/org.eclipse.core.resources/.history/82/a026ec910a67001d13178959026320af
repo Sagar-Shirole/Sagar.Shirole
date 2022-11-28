@@ -1,0 +1,10 @@
+package healspan.login.controller;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="user_master")
+public class User_Master {
+
+}

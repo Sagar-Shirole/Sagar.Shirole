@@ -1,0 +1,14 @@
+package healspan.login.exception;
+
+public class NoSuchUserExistException extends RuntimeException{
+
+	private String message;
+	 
+    public NoSuchUserExistException() {}
+ 
+    public NoSuchUserExistException(String msg)
+    {
+        super(msg);
+        this.message = msg;
+    }
+}

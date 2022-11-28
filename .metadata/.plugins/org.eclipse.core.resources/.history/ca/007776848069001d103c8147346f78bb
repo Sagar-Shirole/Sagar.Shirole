@@ -1,0 +1,12 @@
+package healspan.login.exception;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+	//handle specific Exception
+	//public ResponseEntity<?> 
+	
+}

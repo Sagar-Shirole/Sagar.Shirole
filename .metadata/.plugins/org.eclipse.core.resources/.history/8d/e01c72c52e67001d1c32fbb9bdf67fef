@@ -1,0 +1,23 @@
+package healspan.login.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import healspan.login.controller.User_Master;
+import healspan.login.repository.UserRepository;
+
+@Service
+public class UserService {
+	@Autowired
+	UserRepository userRepository;
+
+	public boolean findBy(Long um_id, String um_password) {
+		User_Master user_Master = userRepository.getById(um_id);
+		
+		if (um_id.equals(user_Master.getUm_id()) && um_password.equals(user_Master.getUm_password())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}

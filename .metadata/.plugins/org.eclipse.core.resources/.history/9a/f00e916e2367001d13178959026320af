@@ -1,0 +1,12 @@
+package healspan.login.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+
+public boolean findBy(Long um_id,String um_password)
+{
+	return true;
+}
+}

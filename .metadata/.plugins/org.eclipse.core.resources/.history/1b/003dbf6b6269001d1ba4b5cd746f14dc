@@ -1,0 +1,10 @@
+package healspan.login.exception;
+
+import org.springframework.web.bind.annotation.ControllerAdvice;
+
+@ControllerAdvice
+public class ExceptionHandler extends RuntimeException{
+	
+	private static final long um_id=1l;
+
+}

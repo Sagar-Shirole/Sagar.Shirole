@@ -1,0 +1,17 @@
+package healspan.login.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+	@Autowired
+	UserRepository user;
+	
+	public User getUSer(String id)
+	{
+		User user = user.
+		
+	}
+
+}

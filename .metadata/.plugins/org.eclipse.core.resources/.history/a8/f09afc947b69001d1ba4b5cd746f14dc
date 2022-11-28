@@ -1,0 +1,6 @@
+package healspan.login.exception;
+
+public class ErrorDetails extends RuntimeException{
+
+	
+}

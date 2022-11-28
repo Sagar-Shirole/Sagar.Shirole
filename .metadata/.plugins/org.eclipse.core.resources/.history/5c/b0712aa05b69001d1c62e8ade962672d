@@ -1,0 +1,30 @@
+package healspan.login.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import healspan.login.service.UserService;
+
+@RestController
+public class UserController {
+	
+	@Autowired
+	private UserService userService;
+	
+	//get User By Id
+	@PostMapping("/user_master")
+	//@GetMapping("/user_master/{um_id}/{um_password}")
+	public String getUser(@RequestBody Long um_id,@RequestBody String um_password ){
+		boolean b = userService.findBy(um_id, um_password);
+		if(b == true){
+			return "Welcome: " +um_id;
+		}
+		else {
+			return "Invalid Credential";
+		}	
+	}
+}

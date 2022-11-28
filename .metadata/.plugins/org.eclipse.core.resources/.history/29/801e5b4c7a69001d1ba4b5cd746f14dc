@@ -1,0 +1,44 @@
+package healspan.login.service;
+
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+import org.springframework.stereotype.Service;
+
+import healspan.login.controller.User_Master;
+import healspan.login.exception.NoSuchUserExistException;
+import healspan.login.exception.UserAlreadyExistsException;
+import healspan.login.repository.UserRepository;
+
+@Service
+public class UserService {
+	@Autowired
+	private UserRepository userRepository;
+
+	public Object getUser(Long um_id, String um_password) {
+		User_Master user_Master = userRepository.getById(um_id);
+		if (um_id.equals(user_Master.getUm_id()) && um_password.equals(user_Master.getUm_password())) {
+			return userRepository.findById(um_id);
+		}
+		return userRepository.findById(um_id)
+				.orElseThrow(() -> new NoSuchElementException("NO USER PRESENT WITH ID = " + um_id));
+	}
+
+	/*
+	 * public String addCustomer(User_Master user) { User_Master existingUser =
+	 * userRepository.findById(user.getUm_id()) .orElse(null); if (existingUser ==
+	 * null) { userRepository.save(user); return "User added successfully"; } else
+	 * throw new UserAlreadyExistsException( "User already exists!!"); }
+	 */
+
+	/*
+	 * public String updateCustomer(User_Master user1) { User_Master existingUser1 =
+	 * userRepository.findById(user1.getUm_id()) .orElse(null); if (userRepository
+	 * == null) throw new NoSuchUserExistException( "No Such User exists!!"); else {
+	 * existingUser1.setUm_password(user1.getUm_password());
+	 * userRepository.save(existingUser1); return "Record updated Successfully"; } }
+	 */
+
+}

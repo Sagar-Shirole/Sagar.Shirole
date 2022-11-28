@@ -1,0 +1,12 @@
+package healspan.login.controller;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Data
+@Table(name="user_master")
+public class User_Master {
+
+}

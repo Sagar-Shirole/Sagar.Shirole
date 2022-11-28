@@ -1,0 +1,5 @@
+package healspan.login.controller;
+
+public class UserService {
+
+}
